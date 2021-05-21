@@ -6,6 +6,8 @@ String temp = "";
 int mode = 15;
 int LED1 = 5;
 int LED2 = 6;
+
+char ledC = 0;
 LiquidCrystal lcd(9,8,7,4,3,2);
 void setup() {
   // put your setup code here, to run once:
@@ -23,11 +25,11 @@ ISR (SPI_STC_vect)
     commandfrommaster[i] = SPI.transfer(' ');
   }
   Serial.println(commandfrommaster);
-  if(commandfrommaster[0] == 'S' && commandfrommaster[9] == 'E')
+  if(commandfrommaster[0] == '*' && commandfrommaster[9] == '#')
   {
     strncpy(check, commandfrommaster + 1, 4);
     check[4] = '\0';
-    if(strcmp(check, "M1LM") == 0)
+    if(strcmp(check, "A1LM") == 0)
     {
       temp = "Nhiet do:";
       temp += commandfrommaster[5];
@@ -43,28 +45,43 @@ ISR (SPI_STC_vect)
     }
     else
     {
-      strncpy(check, commandfrommaster + 1, 7);
-      check[7] = '\0';
-      if(strcmp(check, "M2LEDMD") == 0)
+      strncpy(check, commandfrommaster + 1, 6);
+      check[6] = '\0';
+      if(strcmp(check, "A2LSWL") == 0)
       {
+        ledC = commandfrommaster[7] - 48;
         mode = commandfrommaster[8] - 48;
         if(mode == 1)
         {
-          digitalWrite(LED1, HIGH);
-          digitalWrite(LED2, HIGH); 
+          switch (ledC)
+          {
+            case 1:
+              digitalWrite(LED1, HIGH);
+              break;
+          }
         }
-        else if(mode == 2)
+        else
         {
-          digitalWrite(LED1, LOW);
-          digitalWrite(LED2, LOW);
+          switch (ledC)
+          {
+            case 1:
+              digitalWrite(LED1, LOW);
+              break;
+          }
         }
       }
-      else if(strcmp(check, "M2LEDPW") == 0)
+      else 
       {
-        mode = commandfrommaster[8] - 48;
-        analogWrite(LED1, map(mode,0,9,0,255));
-        analogWrite(LED2, map(mode,0,9,0,255));
+        strncpy(check, commandfrommaster + 1, 5);
+        check[5] = '\0';
+        if(strcmp(check, "A2LPW") == 0)
+        {
+        mode = (commandfrommaster[8] - 48) + (commandfrommaster[7] - 48)*10 + (commandfrommaster[6] - 48)*100;
+        analogWrite(LED1, mode);
+        analogWrite(LED2, mode);
+        }
       }
+      
     }
   }
 }

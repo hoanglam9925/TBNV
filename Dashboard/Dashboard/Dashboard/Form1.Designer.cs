@@ -49,6 +49,7 @@ namespace Dashboard
             this.btn1Slave1 = new System.Windows.Forms.Button();
             this.grBoxSlave2 = new System.Windows.Forms.GroupBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.swPicture = new System.Windows.Forms.PictureBox();
             this.btn2Slave2 = new System.Windows.Forms.Button();
             this.btn1Slave2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,7 +60,10 @@ namespace Dashboard
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Datelabel = new System.Windows.Forms.Label();
+            this.zalologo = new System.Windows.Forms.PictureBox();
+            this.fblogo = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -68,26 +72,22 @@ namespace Dashboard
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.zalologo = new System.Windows.Forms.PictureBox();
-            this.fblogo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.swPicture = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.grBoxControl.SuspendLayout();
             this.grBoxSlave1.SuspendLayout();
             this.grBoxSlave2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.swPicture)).BeginInit();
             this.panelInfo.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zalologo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fblogo)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.swPicture)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -315,12 +315,23 @@ namespace Dashboard
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(26, 157);
-            this.trackBar1.Maximum = 9;
+            this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(184, 45);
             this.trackBar1.TabIndex = 7;
             this.trackBar1.Visible = false;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // swPicture
+            // 
+            this.swPicture.Image = global::Dashboard.Properties.Resources.swL;
+            this.swPicture.Location = new System.Drawing.Point(71, 40);
+            this.swPicture.Name = "swPicture";
+            this.swPicture.Size = new System.Drawing.Size(97, 54);
+            this.swPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.swPicture.TabIndex = 3;
+            this.swPicture.TabStop = false;
+            this.swPicture.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn2Slave2
             // 
@@ -430,6 +441,16 @@ namespace Dashboard
             this.panelInfo.Size = new System.Drawing.Size(245, 647);
             this.panelInfo.TabIndex = 41;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Dashboard.Properties.Resources.TSV;
+            this.pictureBox2.Location = new System.Drawing.Point(8, 262);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(228, 144);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // Datelabel
             // 
             this.Datelabel.AutoSize = true;
@@ -440,6 +461,28 @@ namespace Dashboard
             this.Datelabel.Size = new System.Drawing.Size(53, 25);
             this.Datelabel.TabIndex = 5;
             this.Datelabel.Text = "Date";
+            // 
+            // zalologo
+            // 
+            this.zalologo.Image = global::Dashboard.Properties.Resources.zalobwuse;
+            this.zalologo.Location = new System.Drawing.Point(197, 590);
+            this.zalologo.Name = "zalologo";
+            this.zalologo.Size = new System.Drawing.Size(39, 40);
+            this.zalologo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.zalologo.TabIndex = 51;
+            this.zalologo.TabStop = false;
+            this.zalologo.Click += new System.EventHandler(this.zalologo_Click);
+            // 
+            // fblogo
+            // 
+            this.fblogo.Image = global::Dashboard.Properties.Resources.fbwithoutfontuse;
+            this.fblogo.Location = new System.Drawing.Point(146, 590);
+            this.fblogo.Name = "fblogo";
+            this.fblogo.Size = new System.Drawing.Size(39, 40);
+            this.fblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fblogo.TabIndex = 50;
+            this.fblogo.TabStop = false;
+            this.fblogo.Click += new System.EventHandler(this.fblogo_Click);
             // 
             // label12
             // 
@@ -527,6 +570,16 @@ namespace Dashboard
             this.panel1.Size = new System.Drawing.Size(242, 123);
             this.panel1.TabIndex = 41;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Dashboard.Properties.Resources.logoguse;
+            this.pictureBox1.Location = new System.Drawing.Point(59, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(107, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
@@ -546,59 +599,6 @@ namespace Dashboard
             this.label13.Size = new System.Drawing.Size(186, 39);
             this.label13.TabIndex = 38;
             this.label13.Text = "Dashboard";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Dashboard.Properties.Resources.TSV;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 262);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(228, 144);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // zalologo
-            // 
-            this.zalologo.Image = global::Dashboard.Properties.Resources.zalobwuse;
-            this.zalologo.Location = new System.Drawing.Point(197, 590);
-            this.zalologo.Name = "zalologo";
-            this.zalologo.Size = new System.Drawing.Size(39, 40);
-            this.zalologo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.zalologo.TabIndex = 51;
-            this.zalologo.TabStop = false;
-            this.zalologo.Click += new System.EventHandler(this.zalologo_Click);
-            // 
-            // fblogo
-            // 
-            this.fblogo.Image = global::Dashboard.Properties.Resources.fbwithoutfontuse;
-            this.fblogo.Location = new System.Drawing.Point(146, 590);
-            this.fblogo.Name = "fblogo";
-            this.fblogo.Size = new System.Drawing.Size(39, 40);
-            this.fblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.fblogo.TabIndex = 50;
-            this.fblogo.TabStop = false;
-            this.fblogo.Click += new System.EventHandler(this.fblogo_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Dashboard.Properties.Resources.logoguse;
-            this.pictureBox1.Location = new System.Drawing.Point(59, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(107, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // swPicture
-            // 
-            this.swPicture.Image = global::Dashboard.Properties.Resources.swL;
-            this.swPicture.Location = new System.Drawing.Point(71, 40);
-            this.swPicture.Name = "swPicture";
-            this.swPicture.Size = new System.Drawing.Size(97, 54);
-            this.swPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.swPicture.TabIndex = 3;
-            this.swPicture.TabStop = false;
-            this.swPicture.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
@@ -625,16 +625,16 @@ namespace Dashboard
             this.grBoxSlave2.ResumeLayout(false);
             this.grBoxSlave2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.swPicture)).EndInit();
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zalologo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fblogo)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.swPicture)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

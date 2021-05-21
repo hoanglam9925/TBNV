@@ -17,17 +17,21 @@ namespace Dashboard
         string[] allPort;
         int modeSlave2 = 0;
 
+        string Slave1name = "A1";
+        string Slave2name = "A2";
+        string RFname = "R1";
+
         string rx = "";
         string prefix = "";
         string suffix = "";
         string device = "";
         string typeofdata = "";
 
-        string[] M1LM35data = new string[2];
+        string[] A1LM35data = new string[2];
         string temperature = "";
 
         string tx = "";
-        string S1data = "";
+        string A1data = "";
         string MAdata = "";
 
 
@@ -45,7 +49,7 @@ namespace Dashboard
             {
                 portCBB.Items.Add(allPort[i]);
             }
-            SetupTxData("S1", "1");
+            SetupTxData("R1", "AU1");
             
         }
 
@@ -80,7 +84,7 @@ namespace Dashboard
             else
             {
                 serialPort1.Close();
-                SetupTxData("S1", "1");
+                SetupTxData("R1", "AU1");
                 connectBtn.BackColor = Color.FromArgb(0, 192, 0);
                 connectBtn.Text = "Connect";
                 Noti.Visible = true;
@@ -132,21 +136,21 @@ namespace Dashboard
             {
                 
             }
-            if ((string.Compare(prefix, "S") == 0) && (string.Compare(suffix, "E") == 0))
+            if ((string.Compare(prefix, "*") == 0) && (string.Compare(suffix, "#") == 0))
             {
-                if (string.Compare(device, "M1") == 0)
+                if (string.Compare(device, "A1") == 0)
                 {
                     if (string.Compare(typeofdata, "LM") == 0)
                     {
-                        M1LM35data[0] = rx.Substring(5, 2);
-                        M1LM35data[1] = rx.Substring(7, 2);
+                        A1LM35data[0] = rx.Substring(5, 2);
+                        A1LM35data[1] = rx.Substring(7, 2);
                         temperature = "";
-                        temperature = M1LM35data[0] + "." + M1LM35data[1];
+                        temperature = A1LM35data[0] + "." + A1LM35data[1];
                         Nhietdo.Text = temperature;
                         tempProcessBar.Text = temperature;
                         try
                         {
-                            tempProcessBar.Value = Int32.Parse(M1LM35data[0]);
+                            tempProcessBar.Value = Int32.Parse(A1LM35data[0]);
                         }
                         catch(Exception)
                         {
@@ -154,16 +158,16 @@ namespace Dashboard
                         }
                     }
                 }
-                else if (string.Compare(device, "S1") == 0)
+                else if (string.Compare(device, "R1") == 0)
                 {
-                    S1data = rx.Substring(5, 1);
+                    A1data = rx.Substring(5, 1);
                     if (string.Compare(typeofdata, "RF") == 0)
                     {
-                        if (string.Compare(S1data, "1") == 0)
+                        if (string.Compare(A1data, "1") == 0)
                         {
                             grBoxControl.Visible = true;
                             Noti.Visible = false;
-                            SetupTxData("S1", "0");
+                            SetupTxData("R1", "AU0");
                             serialPort1.Write(tx);
                         }
                         else
@@ -179,14 +183,14 @@ namespace Dashboard
                     {
                         if (string.Compare(MAdata, "1") == 0)
                         {
-                            grBoxSlave1.Visible = false;
+                            //grBoxSlave1.Visible = false;
                         }
                         else
                         {
                             // Truyền data xuống tận Slave để nhận tin giả
-                            SetupTxData("M1", "Z");
-                            serialPort1.Write(tx);
                             grBoxSlave1.Visible = true;
+                            SetupTxData("A1", "L00");
+                            serialPort1.Write(tx);
                         }
                     }
                 }
@@ -196,25 +200,41 @@ namespace Dashboard
         }
         private void SetupTxData(string Slave, string mode)
         {
-            //SxxxxxE
+            //*A1SWL11#
+            int dataParse;
             tx = "";
-            tx += "S";
+            tx += "*";
             tx += Slave;
-            if (string.Compare(Slave, "S1") == 0)
+            if (string.Compare(Slave, "R1") == 0)
             {
                 tx += "RF";
+                tx += mode;
             }
-            else if (string.Compare(Slave, "M2") == 0)
+            else if (string.Compare(Slave, "A2") == 0)
             {
                 if (modeSlave2 == 1)
+                {
+                    dataParse = Int32.Parse(mode);
                     tx += "PW";
+                    tx += (dataParse / 100).ToString();
+                    tx += ((dataParse / 10) % 10).ToString();
+                    tx += (dataParse % 10).ToString();
+                }
+                    
                 else
-                    tx += "MD";
+                {
+                    tx += "SW";
+                    tx += mode;
+                }
+                    
             }
             else
-                tx += "MD";
-            tx += mode;
-            tx += "E";
+            {
+                tx += "SW";
+                tx += mode;
+            }
+
+            tx += "#";
             
         }
         private void label5_Click(object sender, EventArgs e)
@@ -226,14 +246,14 @@ namespace Dashboard
         {
             if (state[0] == 0)
             {
-                SetupTxData("M1", "a");
+                SetupTxData(Slave1name, "L11");
                 serialPort1.Write(tx);
                 state[0] = 1;
                 btn1Slave1.BackColor = Color.FromArgb(255, 128, 128);
             }
             else
             {
-                SetupTxData("M1", "A");
+                SetupTxData(Slave1name, "L10");
                 serialPort1.Write(tx);
                 state[0] = 0;
                 btn1Slave1.BackColor = Color.FromArgb(190, 255, 255);
@@ -244,14 +264,14 @@ namespace Dashboard
         {
             if (state[1] == 0)
             {
-                SetupTxData("M1", "b");
+                SetupTxData(Slave1name, "L21");
                 serialPort1.Write(tx);
                 state[1] = 1;
                 btn2Slave1.BackColor = Color.FromArgb(255, 128, 128);
             }
             else
             {
-                SetupTxData("M1", "B");
+                SetupTxData(Slave1name, "L20");
                 serialPort1.Write(tx);
                 state[1] = 0;
                 btn2Slave1.BackColor = Color.FromArgb(190, 255, 255);
@@ -262,14 +282,14 @@ namespace Dashboard
         {
             if (state[2] == 0)
             {
-                SetupTxData("M1", "c");
+                SetupTxData(Slave1name, "L31");
                 serialPort1.Write(tx);
                 state[2] = 1;
                 btn3Slave1.BackColor = Color.FromArgb(255, 128, 128);
             }
             else
             {
-                SetupTxData("M1", "C");
+                SetupTxData(Slave1name, "L30");
                 serialPort1.Write(tx);
                 state[2] = 0;
                 btn3Slave1.BackColor = Color.FromArgb(190, 255, 255);
@@ -280,14 +300,14 @@ namespace Dashboard
         {
             if (state[3] == 0)
             {
-                SetupTxData("M1", "d");
+                SetupTxData(Slave1name, "L41");
                 serialPort1.Write(tx);
                 state[3] = 1;
                 btn4Slave1.BackColor = Color.FromArgb(255, 128, 128);
             }
             else
             {
-                SetupTxData("M1", "D");
+                SetupTxData(Slave1name, "L40");
                 serialPort1.Write(tx);
                 state[3] = 0;
                 btn4Slave1.BackColor = Color.FromArgb(190, 255, 255);
@@ -296,13 +316,13 @@ namespace Dashboard
 
         private void btn1Slave2_Click(object sender, EventArgs e)
         {
-            SetupTxData("M2", "1");
+            SetupTxData(Slave2name, "L11");
             serialPort1.Write(tx);
         }
 
         private void btn2Slave2_Click(object sender, EventArgs e)
         {
-            SetupTxData("M2", "2");
+            SetupTxData(Slave2name, "L10");
             serialPort1.Write(tx);
         }
 
@@ -329,7 +349,7 @@ namespace Dashboard
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             //int value = Convert.ToInt32(trackBar1.Value.ToString());
-            SetupTxData("M2", trackBar1.Value.ToString());
+            SetupTxData(Slave2name, trackBar1.Value.ToString());
             serialPort1.Write(tx);
         }
 
@@ -343,14 +363,14 @@ namespace Dashboard
         {
             if (state[4] == 0)
             {
-                SetupTxData("M1", "e");
+                SetupTxData(Slave1name, "L51");
                 serialPort1.Write(tx);
                 state[4] = 1;
                 btn5Slave1.BackColor = Color.FromArgb(255, 128, 128);
             }
             else
             {
-                SetupTxData("M1", "E");
+                SetupTxData(Slave1name, "L50");
                 serialPort1.Write(tx);
                 state[4] = 0;
                 btn5Slave1.BackColor = Color.FromArgb(190, 255, 255);
@@ -361,14 +381,14 @@ namespace Dashboard
         {
             if (state[5] == 0)
             {
-                SetupTxData("M1", "f");
+                SetupTxData(Slave1name, "L61");
                 serialPort1.Write(tx);
                 state[5] = 1;
                 btn6Slave1.BackColor = Color.FromArgb(255, 128, 128);
             }
             else
             {
-                SetupTxData("M1", "F");
+                SetupTxData(Slave1name, "L60");
                 serialPort1.Write(tx);
                 state[5] = 0;
                 btn6Slave1.BackColor = Color.FromArgb(190, 255, 255);
@@ -379,14 +399,14 @@ namespace Dashboard
         {
             if (state[6] == 0)
             {
-                SetupTxData("M1", "g");
+                SetupTxData(Slave1name, "L71");
                 serialPort1.Write(tx);
                 state[6] = 1;
                 btn7Slave1.BackColor = Color.FromArgb(255, 128, 128);
             }
             else
             {
-                SetupTxData("M1", "G");
+                SetupTxData(Slave1name, "L70");
                 serialPort1.Write(tx);
                 state[6] = 0;
                 btn7Slave1.BackColor = Color.FromArgb(190, 255, 255);
@@ -397,14 +417,14 @@ namespace Dashboard
         {
             if (state[7] == 0)
             {
-                SetupTxData("M1", "h");
+                SetupTxData(Slave1name, "L81");
                 serialPort1.Write(tx);
                 state[7] = 1;
                 btn8Slave1.BackColor = Color.FromArgb(255, 128, 128);
             }
             else
             {
-                SetupTxData("M1", "H");
+                SetupTxData(Slave1name, "L80");
                 serialPort1.Write(tx);
                 state[7] = 0;
                 btn8Slave1.BackColor = Color.FromArgb(190, 255, 255);

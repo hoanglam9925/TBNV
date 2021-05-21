@@ -7,6 +7,9 @@ int LED5 = 6;
 int LED6 = 7;
 int LED7 = 8;
 int LED8 = 9;
+
+char ledC = 0;
+
 char check[15];
 char mode = 0;
 bool state = 0;
@@ -16,7 +19,7 @@ float voltage;
 float temp;
 //SM1LM data data data data E
 char commandfrommaster[10];
-char dataLM[11] = "SM1LM0000E";
+char dataLM[11] = "*A1LM0000#";
 int sensorPin = A0;
 void setup() {
   // put your setup code here, to run once:
@@ -39,82 +42,76 @@ ISR (SPI_STC_vect)
     commandfrommaster[i] = SPI.transfer(dataLM[i]);
   }  
   Serial.println(commandfrommaster);
-  if(commandfrommaster[0] == 'S' && commandfrommaster[9] == 'E')
+  if(commandfrommaster[0] == '*' && commandfrommaster[9] == '#')
   {
-    strncpy(check, commandfrommaster + 1, 7);
-    check[7] = '\0';
-    if(strcmp(check, "M1LEDMD") == 0)
+    strncpy(check, commandfrommaster + 1, 6);
+    check[6] = '\0';
+    if(strcmp(check, "A1LSWL") == 0)
     {
+      ledC = commandfrommaster[7];
       mode = commandfrommaster[8];
       Serial.println(mode);
     }
   }
-  if(mode == 'a')
+  if(mode == '1')
   {
-    digitalWrite(LED1, HIGH);
+    switch (ledC)
+    {
+      case '1':
+        digitalWrite(LED1, HIGH);
+        break;
+      case '2':
+        digitalWrite(LED2, HIGH);
+        break;
+      case '3':
+        digitalWrite(LED3, HIGH);
+        break;
+      case '4':
+        digitalWrite(LED4, HIGH);
+        break;
+      case '5':
+        digitalWrite(LED5, HIGH);
+        break;
+      case '6':
+        digitalWrite(LED6, HIGH);
+        break;
+      case '7':
+        digitalWrite(LED7, HIGH);
+        break;
+      case '8':
+        digitalWrite(LED8, HIGH);
+        break;
+    }
   }
-  else if(mode == 'A')
+  else
   {
-    digitalWrite(LED1, LOW);
-  }
-  else if(mode == 'b')
-  {
-    digitalWrite(LED2, HIGH);
-  }
-  else if(mode == 'B')
-  {
-    digitalWrite(LED2, LOW);
-  }
-  else if(mode == 'c')
-  {
-    digitalWrite(LED3, HIGH);
-  }
-  else if(mode == 'C')
-  {
-    digitalWrite(LED3, LOW);
-  }
-  else if(mode == 'd')
-  {
-    digitalWrite(LED4, HIGH);
-  }
-  else if(mode == 'D')
-  {
-    digitalWrite(LED4, LOW);
-  }
-  else if(mode == 'e')
-  {
-    digitalWrite(LED5, HIGH);
-  }
-  else if(mode == 'E')
-  {
-    digitalWrite(LED5, LOW);
-  }
-
-  else if(mode == 'f')
-  {
-    digitalWrite(LED6, HIGH);
-  }
-  else if(mode == 'F')
-  {
-    digitalWrite(LED6, LOW);
-  }
-
-   else if(mode == 'g')
-  {
-    digitalWrite(LED7, HIGH);
-  }
-  else if(mode == 'G')
-  {
-    digitalWrite(LED7, LOW);
-  }
-
-  else if(mode == 'h')
-  {
-    digitalWrite(LED8, HIGH);
-  }
-  else if(mode == 'H')
-  {
-    digitalWrite(LED8, LOW);
+    switch (ledC)
+    {
+      case '1':
+        digitalWrite(LED1, LOW);
+        break;
+      case '2':
+        digitalWrite(LED2, LOW);
+        break;
+      case '3':
+        digitalWrite(LED3, LOW);
+        break;
+      case '4':
+        digitalWrite(LED4, LOW);
+        break;
+      case '5':
+        digitalWrite(LED5, LOW);
+        break;
+      case '6':
+        digitalWrite(LED6, LOW);
+        break;
+      case '7':
+        digitalWrite(LED7, LOW);
+        break;
+      case '8':
+        digitalWrite(LED8, LOW);
+        break;
+    }
   }
 }
 void loop() {
