@@ -1,8 +1,9 @@
-u8_spi_tx
-u8_LMdata
-u8_device
-u8_spi_rx
-u8_uart_tx
-u8_uart_rx
-u8_count_timer
+u8SPIdataTx
+u8LMdata
+u8Device
+u8SPIdataTx
+u8UARTdataTx
+u8UARTdataRx
+u8Counter
 CardID
+u8AuthCommand

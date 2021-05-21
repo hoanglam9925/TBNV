@@ -60,6 +60,7 @@ namespace Dashboard
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Datelabel = new System.Windows.Forms.Label();
             this.zalologo = new System.Windows.Forms.PictureBox();
@@ -75,6 +76,12 @@ namespace Dashboard
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.grBoxLogin = new System.Windows.Forms.GroupBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.loginBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grBoxControl.SuspendLayout();
             this.grBoxSlave1.SuspendLayout();
@@ -88,6 +95,7 @@ namespace Dashboard
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.grBoxLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -138,6 +146,7 @@ namespace Dashboard
             this.tempProcessBar.Text = "0";
             this.tempProcessBar.TextMargin = new System.Windows.Forms.Padding(8, -5, 0, 0);
             this.tempProcessBar.Value = 5;
+            this.tempProcessBar.Visible = false;
             // 
             // Noti
             // 
@@ -198,7 +207,7 @@ namespace Dashboard
             this.grBoxControl.Controls.Add(this.grBoxSlave1);
             this.grBoxControl.Controls.Add(this.grBoxSlave2);
             this.grBoxControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grBoxControl.Location = new System.Drawing.Point(298, 325);
+            this.grBoxControl.Location = new System.Drawing.Point(298, 335);
             this.grBoxControl.Name = "grBoxControl";
             this.grBoxControl.Size = new System.Drawing.Size(598, 294);
             this.grBoxControl.TabIndex = 32;
@@ -224,77 +233,86 @@ namespace Dashboard
             this.grBoxSlave1.TabIndex = 31;
             this.grBoxSlave1.TabStop = false;
             this.grBoxSlave1.Text = "Slave1";
+            this.grBoxSlave1.Visible = false;
             // 
             // btn8Slave1
             // 
+            this.btn8Slave1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn8Slave1.Location = new System.Drawing.Point(167, 125);
             this.btn8Slave1.Name = "btn8Slave1";
             this.btn8Slave1.Size = new System.Drawing.Size(41, 67);
             this.btn8Slave1.TabIndex = 7;
-            this.btn8Slave1.UseVisualStyleBackColor = true;
+            this.btn8Slave1.UseVisualStyleBackColor = false;
             this.btn8Slave1.Click += new System.EventHandler(this.btn8Slave1_Click);
             // 
             // btn7Slave1
             // 
+            this.btn7Slave1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn7Slave1.Location = new System.Drawing.Point(122, 125);
             this.btn7Slave1.Name = "btn7Slave1";
             this.btn7Slave1.Size = new System.Drawing.Size(39, 67);
             this.btn7Slave1.TabIndex = 6;
-            this.btn7Slave1.UseVisualStyleBackColor = true;
+            this.btn7Slave1.UseVisualStyleBackColor = false;
             this.btn7Slave1.Click += new System.EventHandler(this.btn7Slave1_Click);
             // 
             // btn6Slave1
             // 
+            this.btn6Slave1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn6Slave1.Location = new System.Drawing.Point(75, 125);
             this.btn6Slave1.Name = "btn6Slave1";
             this.btn6Slave1.Size = new System.Drawing.Size(41, 67);
             this.btn6Slave1.TabIndex = 5;
-            this.btn6Slave1.UseVisualStyleBackColor = true;
+            this.btn6Slave1.UseVisualStyleBackColor = false;
             this.btn6Slave1.Click += new System.EventHandler(this.btn6Slave1_Click);
             // 
             // btn5Slave1
             // 
+            this.btn5Slave1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn5Slave1.Location = new System.Drawing.Point(30, 125);
             this.btn5Slave1.Name = "btn5Slave1";
             this.btn5Slave1.Size = new System.Drawing.Size(39, 67);
             this.btn5Slave1.TabIndex = 4;
-            this.btn5Slave1.UseVisualStyleBackColor = true;
+            this.btn5Slave1.UseVisualStyleBackColor = false;
             this.btn5Slave1.Click += new System.EventHandler(this.btn5Slave1_Click);
             // 
             // btn4Slave1
             // 
+            this.btn4Slave1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn4Slave1.Location = new System.Drawing.Point(167, 40);
             this.btn4Slave1.Name = "btn4Slave1";
             this.btn4Slave1.Size = new System.Drawing.Size(41, 67);
             this.btn4Slave1.TabIndex = 3;
-            this.btn4Slave1.UseVisualStyleBackColor = true;
+            this.btn4Slave1.UseVisualStyleBackColor = false;
             this.btn4Slave1.Click += new System.EventHandler(this.btn4Slave1_Click);
             // 
             // btn3Slave1
             // 
+            this.btn3Slave1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn3Slave1.Location = new System.Drawing.Point(122, 40);
             this.btn3Slave1.Name = "btn3Slave1";
             this.btn3Slave1.Size = new System.Drawing.Size(39, 67);
             this.btn3Slave1.TabIndex = 2;
-            this.btn3Slave1.UseVisualStyleBackColor = true;
+            this.btn3Slave1.UseVisualStyleBackColor = false;
             this.btn3Slave1.Click += new System.EventHandler(this.btn3Slave1_Click);
             // 
             // btn2Slave1
             // 
+            this.btn2Slave1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn2Slave1.Location = new System.Drawing.Point(75, 40);
             this.btn2Slave1.Name = "btn2Slave1";
             this.btn2Slave1.Size = new System.Drawing.Size(41, 67);
             this.btn2Slave1.TabIndex = 1;
-            this.btn2Slave1.UseVisualStyleBackColor = true;
+            this.btn2Slave1.UseVisualStyleBackColor = false;
             this.btn2Slave1.Click += new System.EventHandler(this.btn2Slave1_Click);
             // 
             // btn1Slave1
             // 
+            this.btn1Slave1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn1Slave1.Location = new System.Drawing.Point(30, 40);
             this.btn1Slave1.Name = "btn1Slave1";
             this.btn1Slave1.Size = new System.Drawing.Size(39, 67);
             this.btn1Slave1.TabIndex = 0;
-            this.btn1Slave1.UseVisualStyleBackColor = true;
+            this.btn1Slave1.UseVisualStyleBackColor = false;
             this.btn1Slave1.Click += new System.EventHandler(this.btn1Slave1_Click);
             // 
             // grBoxSlave2
@@ -311,6 +329,7 @@ namespace Dashboard
             this.grBoxSlave2.TabIndex = 32;
             this.grBoxSlave2.TabStop = false;
             this.grBoxSlave2.Text = "Slave2";
+            this.grBoxSlave2.Visible = false;
             // 
             // trackBar1
             // 
@@ -335,20 +354,22 @@ namespace Dashboard
             // 
             // btn2Slave2
             // 
+            this.btn2Slave2.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn2Slave2.Location = new System.Drawing.Point(136, 135);
             this.btn2Slave2.Name = "btn2Slave2";
             this.btn2Slave2.Size = new System.Drawing.Size(74, 67);
             this.btn2Slave2.TabIndex = 2;
-            this.btn2Slave2.UseVisualStyleBackColor = true;
+            this.btn2Slave2.UseVisualStyleBackColor = false;
             this.btn2Slave2.Click += new System.EventHandler(this.btn2Slave2_Click);
             // 
             // btn1Slave2
             // 
+            this.btn1Slave2.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn1Slave2.Location = new System.Drawing.Point(26, 135);
             this.btn1Slave2.Name = "btn1Slave2";
             this.btn1Slave2.Size = new System.Drawing.Size(74, 67);
             this.btn1Slave2.TabIndex = 1;
-            this.btn1Slave2.UseVisualStyleBackColor = true;
+            this.btn1Slave2.UseVisualStyleBackColor = false;
             this.btn1Slave2.Click += new System.EventHandler(this.btn1Slave2_Click);
             // 
             // label2
@@ -423,6 +444,7 @@ namespace Dashboard
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelInfo.Controls.Add(this.label4);
             this.panelInfo.Controls.Add(this.pictureBox2);
             this.panelInfo.Controls.Add(this.Timelabel);
             this.panelInfo.Controls.Add(this.Datelabel);
@@ -440,6 +462,16 @@ namespace Dashboard
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(245, 647);
             this.panelInfo.TabIndex = 41;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 620);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 13);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Copyright © 2020 NHL";
             // 
             // pictureBox2
             // 
@@ -579,6 +611,7 @@ namespace Dashboard
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // panel2
             // 
@@ -600,12 +633,78 @@ namespace Dashboard
             this.label13.TabIndex = 38;
             this.label13.Text = "Dashboard";
             // 
+            // grBoxLogin
+            // 
+            this.grBoxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grBoxLogin.Controls.Add(this.loginBtn);
+            this.grBoxLogin.Controls.Add(this.passwordTextBox);
+            this.grBoxLogin.Controls.Add(this.label15);
+            this.grBoxLogin.Controls.Add(this.userNameTextBox);
+            this.grBoxLogin.Controls.Add(this.label14);
+            this.grBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grBoxLogin.Location = new System.Drawing.Point(1029, 188);
+            this.grBoxLogin.Name = "grBoxLogin";
+            this.grBoxLogin.Size = new System.Drawing.Size(345, 175);
+            this.grBoxLogin.TabIndex = 44;
+            this.grBoxLogin.TabStop = false;
+            this.grBoxLogin.Text = "Login";
+            this.grBoxLogin.Visible = false;
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.Location = new System.Drawing.Point(118, 98);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(199, 26);
+            this.passwordTextBox.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(25, 98);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(82, 20);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Password:";
+            // 
+            // userNameTextBox
+            // 
+            this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTextBox.Location = new System.Drawing.Point(118, 61);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(199, 26);
+            this.userNameTextBox.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(25, 61);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(87, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Username:";
+            // 
+            // loginBtn
+            // 
+            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.Location = new System.Drawing.Point(235, 131);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(75, 38);
+            this.loginBtn.TabIndex = 4;
+            this.loginBtn.Text = "Login";
+            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(933, 641);
+            this.ClientSize = new System.Drawing.Size(932, 641);
+            this.Controls.Add(this.grBoxLogin);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.groupBox1);
@@ -635,6 +734,8 @@ namespace Dashboard
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.grBoxLogin.ResumeLayout(false);
+            this.grBoxLogin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,6 +788,13 @@ namespace Dashboard
         private System.Windows.Forms.Label Datelabel;
         private CircularProgressBar.CircularProgressBar tempProcessBar;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox grBoxLogin;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.Button loginBtn;
     }
 }
 

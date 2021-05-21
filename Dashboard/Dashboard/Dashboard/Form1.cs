@@ -17,6 +17,9 @@ namespace Dashboard
         string[] allPort;
         int modeSlave2 = 0;
 
+        string usernname = "hoanglam";
+        string password = "hoanglam123";
+
         string Slave1name = "A1";
         string Slave2name = "A2";
         string RFname = "R1";
@@ -36,6 +39,7 @@ namespace Dashboard
 
 
         int[] state = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
+        int[] stateSlave2 = new int[2] { 0, 0 };
         public Form1()
         {
             InitializeComponent();
@@ -71,6 +75,8 @@ namespace Dashboard
                     connectBtn.Text = "Disconnect";
                     Noti.Visible = true;
                     Noti.Text = "Vui lòng xác thực để mở bảng điều khiển!";
+                    grBoxLogin.Location = new Point(400, 350);
+                    grBoxLogin.Visible = true;
                     //Noti.Visible = false;
                     Noti.Location = new Point(115, 36);
                     //Gửi tín hiệu cho phép hoạt động đi
@@ -78,11 +84,14 @@ namespace Dashboard
                     label3.Visible = true;
                     label5.Visible = true;
                     Nhietdo.Visible = true;
+                    tempProcessBar.Visible = true;
                     //grBoxControl.Visible = true;
                 }
             }
             else
             {
+                SetupTxData("R1", "AU3");
+                serialPort1.Write(tx);
                 serialPort1.Close();
                 SetupTxData("R1", "AU1");
                 connectBtn.BackColor = Color.FromArgb(0, 192, 0);
@@ -91,10 +100,12 @@ namespace Dashboard
                 Noti.Text = "Bạn chưa kết nối";
                 Noti.Location = new Point(215, 36);
                 grBoxControl.Visible = false;
+                grBoxLogin.Visible = false;
                 //Tín hiệu cho phép NFC hoạt động khi Connect sẽ được gửi đi
                 label3.Visible = false;
                 label5.Visible = false;
                 Nhietdo.Visible = false;
+                tempProcessBar.Visible = false;
             }
         }
 
@@ -121,16 +132,10 @@ namespace Dashboard
         {
             try
             {
-                ////rx: S S/M 1/2  LM/RF data data data data E (tối đa 10bit)
-                //Lấy đầu đuôi của chuỗi đến kiểm tra có đúng format hay không
-                //Kiểm tra đúng định dạng gửi tới S...E chưa 
                 prefix = rx.Substring(0, 1);
                 suffix = rx.Substring(rx.Length - 1, 1);
-                //Kiểm tra device S1 M1
                 device = rx.Substring(1, 2);
-                typeofdata = rx.Substring(3, 2);
-
-                
+                typeofdata = rx.Substring(3, 2);  
             }
             catch (Exception)
             {
@@ -154,7 +159,7 @@ namespace Dashboard
                         }
                         catch(Exception)
                         {
-
+                            tempProcessBar.Value = 0;
                         }
                     }
                 }
@@ -165,18 +170,46 @@ namespace Dashboard
                     {
                         if (string.Compare(A1data, "1") == 0)
                         {
+                            grBoxLogin.Visible = false;
                             grBoxControl.Visible = true;
-                            Noti.Visible = false;
+                            Noti.Location = new Point(220, 36);
+                            Noti.Text = "Hello Hoàng Lâm";
+                            grBoxSlave1.Visible = true;
+                            grBoxSlave2.Visible = true;
+                            SetupTxData("R1", "AU0");
+                            serialPort1.Write(tx);
+                        }
+                        else if(string.Compare(A1data, "2") == 0)
+                        {
+                            grBoxLogin.Visible = false;
+                            grBoxControl.Visible = true;
+                            Noti.Location = new Point(220, 36);
+                            Noti.Text = "Hello Hoàng Lâm";
+                            grBoxSlave1.Visible = true;
+                            grBoxSlave2.Visible = false;
+                            SetupTxData("R1", "AU0");
+                            serialPort1.Write(tx);
+                        }
+                        else if(string.Compare(A1data, "3") == 0)
+                        {
+                            grBoxLogin.Visible = false;
+                            grBoxControl.Visible = true;
+                            Noti.Location = new Point(220, 36);
+                            Noti.Text = "Hello Hoàng Lâm";
+                            grBoxSlave1.Visible = false;
+                            grBoxSlave2.Visible = true;
                             SetupTxData("R1", "AU0");
                             serialPort1.Write(tx);
                         }
                         else
                         {
                             grBoxControl.Visible = false;
+                            grBoxSlave1.Visible = false;
+                            grBoxSlave2.Visible = false;
                         }
                     }
                 }
-                else if (string.Compare(device, "MA") == 0)
+        /*        else if (string.Compare(device, "MA") == 0)
                 {
                     MAdata = rx.Substring(5, 1);
                     if (string.Compare(typeofdata, "DL") == 0)
@@ -193,7 +226,7 @@ namespace Dashboard
                             serialPort1.Write(tx);
                         }
                     }
-                }
+                }*/
             }
 
 
@@ -256,7 +289,7 @@ namespace Dashboard
                 SetupTxData(Slave1name, "L10");
                 serialPort1.Write(tx);
                 state[0] = 0;
-                btn1Slave1.BackColor = Color.FromArgb(190, 255, 255);
+                btn1Slave1.BackColor = Color.MediumSlateBlue;
             }
         }
 
@@ -274,7 +307,7 @@ namespace Dashboard
                 SetupTxData(Slave1name, "L20");
                 serialPort1.Write(tx);
                 state[1] = 0;
-                btn2Slave1.BackColor = Color.FromArgb(190, 255, 255);
+                btn2Slave1.BackColor = Color.MediumSlateBlue;
             }
         }
 
@@ -292,7 +325,7 @@ namespace Dashboard
                 SetupTxData(Slave1name, "L30");
                 serialPort1.Write(tx);
                 state[2] = 0;
-                btn3Slave1.BackColor = Color.FromArgb(190, 255, 255);
+                btn3Slave1.BackColor = Color.MediumSlateBlue;
             }
         }
 
@@ -310,20 +343,49 @@ namespace Dashboard
                 SetupTxData(Slave1name, "L40");
                 serialPort1.Write(tx);
                 state[3] = 0;
-                btn4Slave1.BackColor = Color.FromArgb(190, 255, 255);
+                btn4Slave1.BackColor = Color.MediumSlateBlue;
             }
         }
 
         private void btn1Slave2_Click(object sender, EventArgs e)
         {
-            SetupTxData(Slave2name, "L11");
-            serialPort1.Write(tx);
+            if(stateSlave2[0] == 0)
+            {
+                SetupTxData(Slave2name, "L11");
+                serialPort1.Write(tx);
+                serialPort1.Write(tx);
+                stateSlave2[0] = 1;
+                btn1Slave2.BackColor = Color.Lime;
+            }
+            else
+            {
+                SetupTxData(Slave2name, "L10");
+                serialPort1.Write(tx);
+                serialPort1.Write(tx);
+                stateSlave2[0] = 0;
+                btn1Slave2.BackColor = Color.MediumSlateBlue;
+            }
+           
         }
 
         private void btn2Slave2_Click(object sender, EventArgs e)
         {
-            SetupTxData(Slave2name, "L10");
-            serialPort1.Write(tx);
+            if (stateSlave2[1] == 0)
+            {
+                SetupTxData(Slave2name, "L21");
+                serialPort1.Write(tx);
+                serialPort1.Write(tx);
+                stateSlave2[1] = 1;
+                btn2Slave2.BackColor = Color.Lime;
+            }
+            else
+            {
+                SetupTxData(Slave2name, "L20");
+                serialPort1.Write(tx);
+                serialPort1.Write(tx);
+                stateSlave2[1] = 0;
+                btn2Slave2.BackColor = Color.MediumSlateBlue;
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -343,6 +405,12 @@ namespace Dashboard
                 btn1Slave2.Visible = true;
                 btn2Slave2.Visible = true;
                 modeSlave2 = 0;
+                stateSlave2[0] = 1;
+                stateSlave2[1] = 1;
+                btn1Slave2.BackColor = Color.Lime;
+                btn2Slave2.BackColor = Color.Lime;
+                SetupTxData(Slave2name, "L00");
+                serialPort1.Write(tx);
             }
         }
 
@@ -373,7 +441,7 @@ namespace Dashboard
                 SetupTxData(Slave1name, "L50");
                 serialPort1.Write(tx);
                 state[4] = 0;
-                btn5Slave1.BackColor = Color.FromArgb(190, 255, 255);
+                btn5Slave1.BackColor = Color.MediumSlateBlue;
             }
         }
 
@@ -391,7 +459,7 @@ namespace Dashboard
                 SetupTxData(Slave1name, "L60");
                 serialPort1.Write(tx);
                 state[5] = 0;
-                btn6Slave1.BackColor = Color.FromArgb(190, 255, 255);
+                btn6Slave1.BackColor = Color.MediumSlateBlue;
             }
         }
 
@@ -409,7 +477,7 @@ namespace Dashboard
                 SetupTxData(Slave1name, "L70");
                 serialPort1.Write(tx);
                 state[6] = 0;
-                btn7Slave1.BackColor = Color.FromArgb(190, 255, 255);
+                btn7Slave1.BackColor = Color.MediumSlateBlue;
             }
         }
 
@@ -427,7 +495,7 @@ namespace Dashboard
                 SetupTxData(Slave1name, "L80");
                 serialPort1.Write(tx);
                 state[7] = 0;
-                btn8Slave1.BackColor = Color.FromArgb(190, 255, 255);
+                btn8Slave1.BackColor = Color.MediumSlateBlue;
             }
         }
 
@@ -439,6 +507,35 @@ namespace Dashboard
         private void zalologo_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://zalo.me/934062998");
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://hcm.ptit.edu.vn/");
+        }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            if(string.Compare(userNameTextBox.Text, usernname) == 0 && string.Compare(passwordTextBox.Text, password) == 0)
+            {
+                grBoxLogin.Visible = false;
+                grBoxControl.Visible = true;
+                userNameTextBox.Text = "";
+                passwordTextBox.Text = "";
+                Noti.Location = new Point(220, 36);
+                Noti.Text = "Hello Hoàng Lâm";
+                grBoxSlave1.Visible = true;
+                grBoxSlave2.Visible = true;
+                SetupTxData("R1", "AU2");
+                serialPort1.Write(tx);
+            }
+            else
+            {
+                userNameTextBox.Text = "";
+                passwordTextBox.Text = "";
+                Noti.Text = "Bạn nhập sai thông tin đăng nhập";
+            } 
+                
         }
     }
 }
