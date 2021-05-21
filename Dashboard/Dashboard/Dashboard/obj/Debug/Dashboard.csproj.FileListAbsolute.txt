@@ -1,0 +1,34 @@
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\bin\Debug\Dashboard.exe.config
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\bin\Debug\Dashboard.exe
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\bin\Debug\Dashboard.pdb
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.csprojAssemblyReference.cache
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.Form1.resources
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.Properties.Resources.resources
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.GenerateResource.cache
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.CoreCompileInputs.cache
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.exe
+D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.pdb
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\Dashboard.exe.config
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\Dashboard.exe
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\Dashboard.pdb
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.csprojAssemblyReference.cache
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.Form1.resources
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.Properties.Resources.resources
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.GenerateResource.cache
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.CoreCompileInputs.cache
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.exe
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.pdb
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\AGauge.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.CopyComplete
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\CircularGauge.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\CircularProgressBar.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\WinFormAnimation.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\CircularProgressBar.xml
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\Wisej.Framework.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\Wisej.Framework.xml
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\de\Wisej.Framework.resources.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\es\Wisej.Framework.resources.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\fr\Wisej.Framework.resources.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\it\Wisej.Framework.resources.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\pt\Wisej.Framework.resources.dll
+C:\Users\shoan\Desktop\NgoaiVi-master\Dash\Dashboard\Dashboard\Dashboard\bin\Debug\tr\Wisej.Framework.resources.dll
