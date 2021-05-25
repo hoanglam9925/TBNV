@@ -158,3 +158,330 @@ Finished building: Master.bin
  
 Finished building: Master.list
  
+09:20:29 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+09:20:32 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+09:22:12 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+09:34:16 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+09:53:03 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+10:28:03 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+23:01:07 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+23:08:35 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+23:13:49 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+23:14:46 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+23:15:29 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+23:15:42 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+23:16:52 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16168	     56	   1960	  18184	   4708	Master.elf
+Finished building: default.size.stdout
+ 
+23:30:21 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16160	     56	   1960	  18176	   4700	Master.elf
+Finished building: default.size.stdout
+Finished building: Master.bin
+ 
+ 
+Finished building: Master.list
+ 
+23:38:52 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16160	     56	   1960	  18176	   4700	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+23:39:16 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16160	     56	   1960	  18176	   4700	Master.elf
+Finished building: default.size.stdout
+ 
+23:42:16 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16160	     56	   1960	  18176	   4700	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+23:52:54 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16196	     56	   1960	  18212	   4724	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+23:57:31 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16196	     56	   1960	  18212	   4724	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+00:09:15 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16196	     56	   1960	  18212	   4724	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+00:16:47 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16196	     56	   1960	  18212	   4724	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+00:20:16 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16196	     56	   1960	  18212	   4724	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+00:21:17 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16196	     56	   1960	  18212	   4724	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+09:29:47 **** Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16196	     56	   1960	  18212	   4724	Master.elf
+Finished building: default.size.stdout
+ 
+09:43:47 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\HK2 2021\Ngoai vi\CuoiKy\Lastversion\Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Master.elf
+ 
+arm-none-eabi-objdump -h -S  Master.elf  > "Master.list"
+arm-none-eabi-objcopy  -O binary  Master.elf  "Master.bin"
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16184	     56	   1960	  18200	   4718	Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: Master.bin
+ 
+Finished building: Master.list
+ 
+13:28:07 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16184	     56	   1960	  18200	   4718	Master.elf
+Finished building: default.size.stdout
+ 
+13:58:05 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16184	     56	   1960	  18200	   4718	Master.elf
+Finished building: default.size.stdout
+ 
+14:00:24 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16184	     56	   1960	  18200	   4718	Master.elf
+Finished building: default.size.stdout
+ 
+14:15:15 **** Incremental Build of configuration Debug for project Master ****
+make -j4 all 
+arm-none-eabi-size   Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16184	     56	   1960	  18200	   4718	Master.elf
+Finished building: default.size.stdout
+ 

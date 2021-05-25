@@ -143,7 +143,7 @@ namespace Dashboard
             }
             if ((string.Compare(prefix, "*") == 0) && (string.Compare(suffix, "#") == 0))
             {
-                if (string.Compare(device, "A1") == 0)
+                if (string.Compare(device, Slave1name) == 0)
                 {
                     if (string.Compare(typeofdata, "LM") == 0)
                     {
@@ -163,7 +163,7 @@ namespace Dashboard
                         }
                     }
                 }
-                else if (string.Compare(device, "R1") == 0)
+                else if (string.Compare(device, RFname) == 0)
                 {
                     A1data = rx.Substring(5, 1);
                     if (string.Compare(typeofdata, "RF") == 0)
@@ -209,7 +209,7 @@ namespace Dashboard
                         }
                     }
                 }
-        /*        else if (string.Compare(device, "MA") == 0)
+                else if (string.Compare(device, "MA") == 0)
                 {
                     MAdata = rx.Substring(5, 1);
                     if (string.Compare(typeofdata, "DL") == 0)
@@ -220,13 +220,20 @@ namespace Dashboard
                         }
                         else
                         {
-                            // Truyền data xuống tận Slave để nhận tin giả
-                            grBoxSlave1.Visible = true;
-                            SetupTxData("A1", "L00");
-                            serialPort1.Write(tx);
+                            //grBoxSlave1.Visible = true;
+                           /* if(modeSlave2 == 0)
+                            {
+                                SetupTxData("A2", "L00");
+                                serialPort1.Write(tx);
+                            }    
+                            else
+                            {
+                                SetupTxData(Slave2name, trackBar1.Value.ToString());
+                                serialPort1.Write(tx);
+                            }*/
                         }
                     }
-                }*/
+                }
             }
 
 
@@ -238,12 +245,12 @@ namespace Dashboard
             tx = "";
             tx += "*";
             tx += Slave;
-            if (string.Compare(Slave, "R1") == 0)
+            if (string.Compare(Slave, RFname) == 0)
             {
                 tx += "RF";
                 tx += mode;
             }
-            else if (string.Compare(Slave, "A2") == 0)
+            else if (string.Compare(Slave, Slave2name) == 0)
             {
                 if (modeSlave2 == 1)
                 {
@@ -353,7 +360,7 @@ namespace Dashboard
             {
                 SetupTxData(Slave2name, "L11");
                 serialPort1.Write(tx);
-                serialPort1.Write(tx);
+                //serialPort1.Write(tx);
                 stateSlave2[0] = 1;
                 btn1Slave2.BackColor = Color.Lime;
             }
@@ -361,7 +368,7 @@ namespace Dashboard
             {
                 SetupTxData(Slave2name, "L10");
                 serialPort1.Write(tx);
-                serialPort1.Write(tx);
+               // serialPort1.Write(tx);
                 stateSlave2[0] = 0;
                 btn1Slave2.BackColor = Color.MediumSlateBlue;
             }
@@ -374,7 +381,7 @@ namespace Dashboard
             {
                 SetupTxData(Slave2name, "L21");
                 serialPort1.Write(tx);
-                serialPort1.Write(tx);
+               // serialPort1.Write(tx);
                 stateSlave2[1] = 1;
                 btn2Slave2.BackColor = Color.Lime;
             }
@@ -382,7 +389,7 @@ namespace Dashboard
             {
                 SetupTxData(Slave2name, "L20");
                 serialPort1.Write(tx);
-                serialPort1.Write(tx);
+                //serialPort1.Write(tx);
                 stateSlave2[1] = 0;
                 btn2Slave2.BackColor = Color.MediumSlateBlue;
             }

@@ -1,4 +1,4 @@
-#include<SPI.h>  
+ #include<SPI.h>  
 int LED1 = 2;
 int LED2 = 3;
 int LED3 = 4;
@@ -31,6 +31,8 @@ void setup() {
 ISR (SPI_STC_vect)
 {
   reading = analogRead(sensorPin);
+  Serial.println(reading);
+  Serial.println("\n\n");
   voltage = reading * 5.0 / 1024.0;
   temp = voltage * 100.0;
   dataLM[5] = (int) temp / 10 + 48;

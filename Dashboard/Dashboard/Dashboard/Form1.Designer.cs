@@ -30,6 +30,7 @@ namespace Dashboard
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tempProcessBar = new CircularProgressBar.CircularProgressBar();
             this.Noti = new System.Windows.Forms.Label();
@@ -77,11 +78,11 @@ namespace Dashboard
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.grBoxLogin = new System.Windows.Forms.GroupBox();
+            this.loginBtn = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.loginBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grBoxControl.SuspendLayout();
             this.grBoxSlave1.SuspendLayout();
@@ -650,6 +651,17 @@ namespace Dashboard
             this.grBoxLogin.Text = "Login";
             this.grBoxLogin.Visible = false;
             // 
+            // loginBtn
+            // 
+            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBtn.Location = new System.Drawing.Point(235, 131);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.Size = new System.Drawing.Size(75, 38);
+            this.loginBtn.TabIndex = 4;
+            this.loginBtn.Text = "Login";
+            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
+            // 
             // passwordTextBox
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -687,17 +699,6 @@ namespace Dashboard
             this.label14.TabIndex = 0;
             this.label14.Text = "Username:";
             // 
-            // loginBtn
-            // 
-            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.Location = new System.Drawing.Point(235, 131);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(75, 38);
-            this.loginBtn.TabIndex = 4;
-            this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = true;
-            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -715,7 +716,7 @@ namespace Dashboard
             this.Controls.Add(this.connectBtn);
             this.Controls.Add(this.portCBB);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = resources.GetString("$this.Text");
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

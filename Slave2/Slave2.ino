@@ -17,7 +17,7 @@ void setup() {
   Serial.begin(115200);
   pinMode(LED1,OUTPUT);
   pinMode(MISO,OUTPUT);
-  SPCR |= _BV(SPE);
+  SPCR |= _BV(SPE); // (1 << SPE)
   SPI.attachInterrupt();
 }
 ISR (SPI_STC_vect)

@@ -1,7 +1,7 @@
 u8SPIdataTx
 u8LMdata
 u8Device
-u8SPIdataTx
+u8SPIdataRx
 u8UARTdataTx
 u8UARTdataRx
 u8Counter
